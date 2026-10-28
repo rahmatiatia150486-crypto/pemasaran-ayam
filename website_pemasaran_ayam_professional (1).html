@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyamJaya Farm - Suplier Ayam Pullet & Daging Ayam Karkas Berkualitas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#16a34a',
+                            darkgreen: '#15803d',
+                            lightgreen: '#f0fdf4',
+                            amber: '#f59e0b',
+                            darkamber: '#d97706',
+                            cream: '#fffbeb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-brand-green text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">
+                        <i class="fa-solid font-bold fa-feather"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold text-gray-900 tracking-tight leading-none">AyamJaya<span class="text-brand-amber">Farm</span></span>
+                        <span class="text-xs text-gray-500 font-medium tracking-wide">Peternakan Terpercaya</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
+                    <a href="#beranda" class="hover:text-brand-green transition-colors py-1">Beranda</a>
+                    <a href="#keunggulan" class="hover:text-brand-green transition-colors py-1">Keunggulan</a>
+                    <a href="#produk" class="hover:text-brand-green transition-colors py-1">Katalog Produk</a>
+                    <a href="#kalkulator" class="hover:text-brand-green transition-colors py-1">Kalkulator Pesanan</a>
+                    <a href="#testimoni" class="hover:text-brand-green transition-colors py-1">Testimoni</a>
+                    <a href="#kontak" class="hover:text-brand-green transition-colors py-1">Kontak</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/6281234567890?text=Halo%20AyamJaya%20Farm,%20saya%20ingin%20bertanya%20mengenai%20produk%20ayam." target="_blank" class="bg-brand-green hover:bg-brand-darkgreen text-white font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all flex items-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pesan Sekarang</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="mobile-link block py-2 px-3 text-base font-medium text-gray-700 hover:bg-brand-lightgreen hover:text-brand-green rounded-lg">Beranda</a>
+            <a href="#keunggulan" class="mobile-link block py-2 px-3 text-base font-medium text-gray-700 hover:bg-brand-lightgreen hover:text-brand-green rounded-lg">Keunggulan</a>
+            <a href="#produk" class="mobile-link block py-2 px-3 text-base font-medium text-gray-700 hover:bg-brand-lightgreen hover:text-brand-green rounded-lg">Katalog Produk</a>
+            <a href="#kalkulator" class="mobile-link block py-2 px-3 text-base font-medium text-gray-700 hover:bg-brand-lightgreen hover:text-brand-green rounded-lg">Kalkulator Pesanan</a>
+            <a href="#testimoni" class="mobile-link block py-2 px-3 text-base font-medium text-gray-700 hover:bg-brand-lightgreen hover:text-brand-green rounded-lg">Testimoni</a>
+            <a href="#kontak" class="mobile-link block py-2 px-3 text-base font-medium text-gray-700 hover:bg-brand-lightgreen hover:text-brand-green rounded-lg">Kontak</a>
+            <div class="pt-2">
+                <a href="https://wa.me/6281234567890?text=Halo%20AyamJaya%20Farm,%20saya%20ingin%20bertanya%20mengenai%20produk%20ayam." target="_blank" class="w-full bg-brand-green text-white font-semibold py-3 rounded-xl flex items-center justify-center space-x-2 shadow">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pesan via WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="beranda" class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-brand-lightgreen via-white to-amber-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Hero Text Content -->
+                <div class="space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-brand-green/10 text-brand-green px-4 py-2 rounded-full font-semibold text-xs sm:text-sm">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Peternakan Ayam Bersertifikat & Sehat</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Pasokan Ayam <span class="text-brand-green">Berkualitas Tinggi</span> Untuk Usaha Anda
+                    </h1>
+                    <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                        Penyedia utama bibit ayam pullet siap bertelur, ayam kampung unggulan, serta daging karkas segar higienis langsung dari peternakan modern.
+                    </p>
+                    
+                    <!-- Hero CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="#produk" class="w-full sm:w-auto bg-brand-green hover:bg-brand-darkgreen text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center">
+                            Lihat Katalog Produk
+                        </a>
+                        <a href="#kalkulator" class="w-full sm:w-auto bg-white border border-gray-200 hover:border-brand-green text-gray-700 hover:text-brand-green font-bold px-8 py-4 rounded-xl shadow-sm hover:shadow transition-all text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-calculator text-brand-amber"></i>
+                            <span>Simulasi Pesanan</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlights/Stats Badge -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200/60 max-w-md mx-auto md:mx-0">
+                        <div>
+                            <p class="text-2xl font-bold text-gray-900">100%</p>
+                            <p class="text-xs text-gray-500">Vaksinasi Lengkap</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-gray-900">50K+</p>
+                            <p class="text-xs text-gray-500">Ekor/Bulan Terdistribusi</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-gray-900">200+</p>
+                            <p class="text-xs text-gray-500">Mitra Peternak & Resto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Image -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-72 h-72 bg-brand-amber/20 rounded-full filter blur-3xl opacity-70"></div>
+                    <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-brand-green/20 rounded-full filter blur-3xl opacity-70"></div>
+                    
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80" 
+                             alt="Peternakan Ayam Jaya Farm" 
+                             class="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/800x600/16a34a/ffffff?text=Peternakan+Ayam+Jaya';">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white/50 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-sm">Jaminan Standar Biosekuriti</h4>
+                                <p class="text-xs text-gray-600">Ayam sehat, terawat, dan bebas penyakit terinfeksi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KEUNGGULAN SECTION ================= -->
+    <section id="keunggulan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-green uppercase tracking-wider mb-2">Mengapa Memilih Kami</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Komitmen Kami Pada Kualitas & Kepercayaan Mitra</h3>
+                <p class="mt-4 text-gray-600 text-base sm:text-lg">Kami mengelola peternakan dengan standar profesional tinggi untuk memastikan hasil terbaik bagi usaha Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 hover:bg-brand-lightgreen/50 transition-all border border-gray-100 hover:border-brand-green/30 group">
+                    <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-green group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-syringe"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Vaksinasi Lengkap</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Seluruh stok ayam diberikan vaksin rutin sesuai jadwal medis veteriner untuk daya tahan tubuh maksimal.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 hover:bg-brand-lightgreen/50 transition-all border border-gray-100 hover:border-brand-green/30 group">
+                    <div class="w-14 h-14 bg-brand-amber/10 text-brand-amber rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-amber group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Pakan Nutrisi Unggulan</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Menggunakan racikan pakan tinggi protein alami tanpa bahan berbahaya untuk pertumbuhan optimal.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 hover:bg-brand-lightgreen/50 transition-all border border-gray-100 hover:border-brand-green/30 group">
+                    <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-green group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Kebersihan Terjaga</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Kandang modern terintegrasi dengan sanitasi ketat demi menjaga kesehatan ayam tetap prima.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-gray-50 rounded-2xl p-8 hover:bg-brand-lightgreen/50 transition-all border border-gray-100 hover:border-brand-green/30 group">
+                    <div class="w-14 h-14 bg-brand-amber/10 text-brand-amber rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-amber group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Harga Kompetitif</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Harga langsung dari peternak (tangan pertama) dengan penawaran khusus untuk pemesanan partai besar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KATALOG PRODUK SECTION ================= -->
+    <section id="produk" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-green uppercase tracking-wider mb-2">Pilihan Terbaik</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Katalog Produk Unggulan</h3>
+                <p class="mt-4 text-gray-600 text-base sm:text-lg">Daftar ayam pullet, ayam potong, dan produk peternakan berkualitas tinggi siap kirim.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card Produk 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1563281577-a7be47e20db9?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Ayam Pullet Siap Bertelur" 
+                                 class="w-full h-56 object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/16a34a/ffffff?text=Ayam+Pullet';">
+                            <span class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">Stok Tersedia</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-brand-amber tracking-wider uppercase">Bibit Layer</span>
+                            <h4 class="text-xl font-bold text-gray-900 mt-1 mb-2">Ayam Pullet (Siap Bertelur)</h4>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Usia 13-16 minggu, bobot standar ideal, kekebalan tubuh kuat, siap bertelur dalam beberapa minggu.</p>
+                            <div class="border-t border-gray-100 pt-4 flex items-baseline justify-between">
+                                <span class="text-xs text-gray-500">Mulai dari</span>
+                                <span class="text-2xl font-extrabold text-brand-green">Rp 75.000 <span class="text-xs font-normal text-gray-500">/ekor</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="orderViaWA('Ayam Pullet (Siap Bertelur)')" class="w-full bg-brand-green hover:bg-brand-darkgreen text-white font-semibold py-3 rounded-xl shadow transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Produk 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Daging Ayam Karkas Segar" 
+                                 class="w-full h-56 object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/16a34a/ffffff?text=Daging+Karkas';">
+                            <span class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">Fresh Cold-Chain</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-brand-amber tracking-wider uppercase">Potong & Higienis</span>
+                            <h4 class="text-xl font-bold text-gray-900 mt-1 mb-2">Daging Ayam Karkas Segar</h4>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Potongan karkas bersih (tanpa jeroan/kepala/ceker), dipotong secara halal & higienis, bebas bahan pengawet.</p>
+                            <div class="border-t border-gray-100 pt-4 flex items-baseline justify-between">
+                                <span class="text-xs text-gray-500">Mulai dari</span>
+                                <span class="text-2xl font-extrabold text-brand-green">Rp 36.000 <span class="text-xs font-normal text-gray-500">/kg</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="orderViaWA('Daging Ayam Karkas Segar')" class="w-full bg-brand-green hover:bg-brand-darkgreen text-white font-semibold py-3 rounded-xl shadow transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Produk 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Ayam Kampung Super" 
+                                 class="w-full h-56 object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/16a34a/ffffff?text=Ayam+Kampung';">
+                            <span class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">Terbaik</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-brand-amber tracking-wider uppercase">Ayam Organik / Pedaging</span>
+                            <h4 class="text-xl font-bold text-gray-900 mt-1 mb-2">Ayam Kampung Super (Japer)</h4>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Daging padat gurih, pemeliharaan intensif dengan nutrisi herbal. Cocok untuk konsumsi rumah tangga dan restoran.</p>
+                            <div class="border-t border-gray-100 pt-4 flex items-baseline justify-between">
+                                <span class="text-xs text-gray-500">Mulai dari</span>
+                                <span class="text-2xl font-extrabold text-brand-green">Rp 55.000 <span class="text-xs font-normal text-gray-500">/ekor</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="orderViaWA('Ayam Kampung Super (Japer)')" class="w-full bg-brand-green hover:bg-brand-darkgreen text-white font-semibold py-3 rounded-xl shadow transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KALKULATOR SIMULASI PESANAN ================= -->
+    <section id="kalkulator" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-green to-emerald-800 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <div class="max-w-2xl">
+                    <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Simulasi Pesanan & Estimasi</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-4">Hitung Estimasi Kebutuhan Anda</h3>
+                    <p class="text-emerald-100 text-sm sm:text-base mb-8">Gunakan kalkulator di bawah ini untuk menghitung estimasi biaya awal sesuai jumlah kebutuhan ternak atau karkas Anda.</p>
+                </div>
+
+                <div class="bg-white text-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Form Input Calculator -->
+                    <div class="space-y-4">
+                        <div>
+                            <label for="product-type" class="block text-sm font-semibold text-gray-700 mb-2">Pilih Jenis Produk</label>
+                            <select id="product-type" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none font-medium">
+                                <option value="75000" data-unit="ekor" data-name="Ayam Pullet Siap Bertelur">Ayam Pullet Siap Bertelur (Rp 75.000 / ekor)</option>
+                                <option value="36000" data-unit="kg" data-name="Daging Ayam Karkas">Daging Ayam Karkas Segar (Rp 36.000 / kg)</option>
+                                <option value="55000" data-unit="ekor" data-name="Ayam Kampung Super">Ayam Kampung Super (Rp 55.000 / ekor)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="quantity" class="block text-sm font-semibold text-gray-700 mb-2">Jumlah / Kuantitas (<span id="unit-label">ekor</span>)</label>
+                            <input type="number" id="quantity" min="1" value="50" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none font-medium" placeholder="Masukkan jumlah">
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 flex items-start space-x-2">
+                            <i class="fa-solid fa-circle-info mt-0.5 text-amber-600"></i>
+                            <span>Diskon khusus hingga 5-10% otomatis berlaku untuk pemesanan lebih dari 100 ekor / 100 kg.</span>
+                        </div>
+                    </div>
+
+                    <!-- Display Calculation Result -->
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col justify-between h-full">
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Rincian Estimasi Biaya</h4>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-gray-600">
+                                    <span>Harga Satuan:</span>
+                                    <span id="calc-unit-price" class="font-semibold text-gray-900">Rp 75.000</span>
+                                </div>
+                                <div class="flex justify-between text-gray-600">
+                                    <span>Total Kuantitas:</span>
+                                    <span id="calc-qty" class="font-semibold text-gray-900">50 ekor</span>
+                                </div>
+                                <div class="flex justify-between text-gray-600">
+                                    <span>Potongan Potensial:</span>
+                                    <span id="calc-discount" class="font-semibold text-brand-green">Rp 0</span>
+                                </div>
+                                <div class="border-t border-gray-200 pt-3 flex justify-between items-baseline">
+                                    <span class="font-bold text-gray-900 text-base">Total Estimasi:</span>
+                                    <span id="calc-total" class="text-2xl font-extrabold text-brand-green">Rp 3.750.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="calc-wa-btn" class="mt-6 w-full bg-brand-amber hover:bg-brand-darkamber text-white font-bold py-3 px-4 rounded-xl shadow transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sesuai Hitungan Ini</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TESTIMONI SECTION ================= -->
+    <section id="testimoni" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-green uppercase tracking-wider mb-2">Testimoni Kemitraan</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Apa Kata Mitra & Pelanggan Kami</h3>
+                <p class="mt-4 text-gray-600 text-base">Kepuasan peternak dan penyedia kuliner adalah prioritas utama kami.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimoni 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">"Ayam pullet dari AyamJaya Farm sangat sehat. Dalam 3 minggu setelah masuk kandang bertelur, produksi telurnya langsung stabil di atas 90%. Rekomendasi banget!"</p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-t border-gray-100 pt-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Bapak Hendra" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-gray-900 text-sm">Bapak Hendra</h5>
+                            <p class="text-xs text-gray-500">Peternak Telur - Blitar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">"Pengiriman daging karkas ayam selalu tepat waktu dan segar. Kebersihan terjamin, sangat mendukung standar higiene restoran kami."</p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-t border-gray-100 pt-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Ibu Siska" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-gray-900 text-sm">Ibu Siska</h5>
+                            <p class="text-xs text-gray-500">Pemilik Catering & Resto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">"Respon admin sangat cepat, edukasi pemeliharaan diawal juga lengkap banget. Harga bersaing dengan kualitas yang memuaskan."</p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-t border-gray-100 pt-4">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Pak Rahmad" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-gray-900 text-sm">Pak Rahmad</h5>
+                            <p class="text-xs text-gray-500">Mitra Kemitraan Ayam Japer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KONTAK & FORM PEMESANAN SECTION ================= -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xs font-bold text-brand-green uppercase tracking-wider mb-2">Hubungi Kami</h2>
+                        <h3 class="text-3xl font-extrabold text-gray-900">Siap Melayani Pemesanan & Konsultasi</h3>
+                        <p class="mt-4 text-gray-600">Ada pertanyaan seputar ketersediaan stok, pengiriman luar kota, atau konsultasi pemeliharaan? Tim kami siap membantu Anda.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand-lightgreen text-brand-green rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 text-sm">Lokasi Peternakan</h5>
+                                <p class="text-gray-600 text-sm">Jl. Raya Peternakan No. 88, Agrowisata, Malang, Jawa Timur</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand-lightgreen text-brand-green rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 text-sm">Telepon / WhatsApp</h5>
+                                <p class="text-gray-600 text-sm">+62 812-3456-7890 (Customer Support)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-brand-lightgreen text-brand-green rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 text-sm">Jam Operasional Kandang</h5>
+                                <p class="text-gray-600 text-sm">Senin - Sabtu: 07.00 - 17.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banner Informasi Pengiriman -->
+                    <div class="p-6 bg-amber-50 rounded-2xl border border-amber-200">
+                        <h5 class="font-bold text-amber-900 flex items-center space-x-2">
+                            <i class="fa-solid fa-truck-fast text-brand-amber"></i>
+                            <span>Layanan Pengiriman Aman</span>
+                        </h5>
+                        <p class="text-xs text-amber-800 mt-2 leading-relaxed">Kami melayani pengiriman armada khusus dengan standar sirkulasi udara baik untuk meminimalkan tingkat stres ayam selama perjalanan.</p>
+                    </div>
+                </div>
+
+                <!-- Form Order/Contact Quick Send -->
+                <div class="bg-gray-50 p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-sm">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-2">Form Pemesanan Cepat</h4>
+                    <p class="text-gray-500 text-sm mb-6">Isi formulir di bawah ini untuk terhubung secara otomatis via WhatsApp.</p>
+
+                    <form id="wa-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" id="form-name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none" placeholder="Contoh: Budi Santoso">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Alamat Pengiriman / Kota</label>
+                            <input type="text" id="form-address" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none" placeholder="Contoh: Surabaya, Jawa Timur">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Produk Yang Diminati</label>
+                            <select id="form-product" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none">
+                                <option value="Ayam Pullet Siap Bertelur">Ayam Pullet Siap Bertelur</option>
+                                <option value="Daging Ayam Karkas Segar">Daging Ayam Karkas Segar</option>
+                                <option value="Ayam Kampung Super">Ayam Kampung Super</option>
+                                <option value="Konsultasi Peternakan">Konsultasi / Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Catatan Pesanan / Pesan Khusus</label>
+                            <textarea id="form-note" rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none" placeholder="Tuliskan jumlah estimasi atau pertanyaan Anda..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-green hover:bg-brand-darkgreen text-white font-bold py-4 rounded-xl shadow-md transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Kirim Pesanan via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Col 1: About -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-brand-green text-white rounded-lg flex items-center justify-center font-bold text-base">
+                            <i class="fa-solid fa-feather"></i>
+                        </div>
+                        <span class="text-lg font-extrabold text-white tracking-tight">AyamJaya<span class="text-brand-amber">Farm</span></span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">Pemasaran ternak ayam terpercaya, menyediakan bibit ayam pullet unggulan dan pasokan karkas segar higienis untuk mitra seluruh Indonesia.</p>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-4">Navigasi</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#beranda" class="hover:text-brand-green transition-colors">Beranda</a></li>
+                        <li><a href="#keunggulan" class="hover:text-brand-green transition-colors">Keunggulan</a></li>
+                        <li><a href="#produk" class="hover:text-brand-green transition-colors">Katalog Produk</a></li>
+                        <li><a href="#kalkulator" class="hover:text-brand-green transition-colors">Simulasi Biaya</a></li>
+                        <li><a href="#kontak" class="hover:text-brand-green transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal & Info -->
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-4">Layanan & Jaminan</h5>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><i class="fa-solid fa-check text-brand-green mr-2"></i>Sertifikat Kesehatan Ayam</li>
+                        <li><i class="fa-solid fa-check text-brand-green mr-2"></i>Garansi Pengiriman Selamat</li>
+                        <li><i class="fa-solid fa-check text-brand-green mr-2"></i>Konsultasi Pakan & Kandang</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Social Media -->
+                <div>
+                    <h5 class="text-white font-bold text-sm mb-4">Ikuti Kami</h5>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition-colors"><i class="fa-brands fa-youtube text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+                <p>&copy; 2026 AyamJaya Farm. All rights reserved. Dikembangkan untuk pemasaran ternak profesional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Direct Order Handler for Catalog Cards
+        function orderViaWA(productName) {
+            const phoneNumber = "6281234567890";
+            const message = `Halo AyamJaya Farm, saya tertarik untuk memesan produk *${productName}*. Mohon informasi ketersediaan stok dan harga terbarunya. Terima kasih!`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Kalkulator Interactive Logic
+        const productSelect = document.getElementById('product-type');
+        const quantityInput = document.getElementById('quantity');
+        const unitLabel = document.getElementById('unit-label');
+        const calcUnitPrice = document.getElementById('calc-unit-price');
+        const calcQty = document.getElementById('calc-qty');
+        const calcDiscount = document.getElementById('calc-discount');
+        const calcTotal = document.getElementById('calc-total');
+        const calcWaBtn = document.getElementById('calc-wa-btn');
+
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+        }
+
+        function calculateOrder() {
+            const selectedOption = productSelect.options[productSelect.selectedIndex];
+            const price = parseFloat(selectedOption.value);
+            const unit = selectedOption.getAttribute('data-unit');
+            const qty = parseFloat(quantityInput.value) || 0;
+
+            unitLabel.textContent = unit;
+            calcUnitPrice.textContent = formatRupiah(price);
+            calcQty.textContent = `${qty} ${unit}`;
+
+            let subtotal = price * qty;
+            let discount = 0;
+
+            // Apply 5% discount if quantity >= 100
+            if (qty >= 100) {
+                discount = subtotal * 0.05;
+            }
+
+            let finalTotal = subtotal - discount;
+
+            calcDiscount.textContent = formatRupiah(discount);
+            calcTotal.textContent = formatRupiah(finalTotal);
+
+            return {
+                productName: selectedOption.getAttribute('data-name'),
+                qty: qty,
+                unit: unit,
+                total: formatRupiah(finalTotal)
+            };
+        }
+
+        productSelect.addEventListener('change', calculateOrder);
+        quantityInput.addEventListener('input', calculateOrder);
+
+        // Click handler for Calculator Order Button
+        calcWaBtn.addEventListener('click', () => {
+            const data = calculateOrder();
+            const phoneNumber = "6281234567890";
+            const message = `Halo AyamJaya Farm, berdasarkan hasil simulasi kalkulator di website, saya ingin memesan:\n\n- Produk: *${data.productName}*\n- Jumlah: *${data.qty} ${data.unit}*\n- Estimasi Total: *${data.total}*\n\nMohon petunjuk proses pemesanan selanjutnya. Terima kasih!`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        });
+
+        // Contact Form WhatsApp Handler
+        const waForm = document.getElementById('wa-form');
+        waForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const address = document.getElementById('form-address').value;
+            const product = document.getElementById('form-product').value;
+            const note = document.getElementById('form-note').value;
+
+            const phoneNumber = "6281234567890";
+            const message = `Halo AyamJaya Farm, saya ingin melakukan pemesanan via formulir website:\n\n- *Nama*: ${name}\n- *Lokasi/Alamat*: ${address}\n- *Produk*: ${product}\n- *Catatan*: ${note || '-'}\n\nMohon dapat direspon segara. Terima kasih.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        });
+
+        // Initial Calculation Run
+        calculateOrder();
+    </script>
+</body>
+</html>
